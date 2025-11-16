@@ -116,6 +116,42 @@ uvicorn app.main:app --reload
 - Add RBAC, export reports, audit logs.
 - Read community best-practice repo for conventions.
 
+## Directory Structure (Production-Ready)
+
+```
+your_project/
+│
+├── app/
+│   ├── main.py
+│   ├── core/
+│   │   ├── config.py
+│   │   └── database.py
+│   │
+│   ├── models/
+│   │   └── task.py
+│   │
+│   ├── schemas/
+│   │   └── task.py
+│   │
+│   ├── crud/
+│   │   └── task.py
+│   │
+│   ├── api/
+│   │   ├── deps.py
+│   │   └── v1/
+│   │       └── task.py
+│   │
+│   ├── utils/
+│   │   └── common.py
+│   │
+│   └── __init__.py
+│
+├── .gitignore
+├── requirements.txt
+└── README.md
+
+```
+
 ## Contributing
 Feel free to fork this repo and open PRs — this project is meant to be educational and community-driven.
 If you improve a module or add a feature, document it and submit a pull request.
