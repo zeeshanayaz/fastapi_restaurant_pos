@@ -17,3 +17,10 @@ def get_tasks(db: Session):
 
 def get_task_by_id(db: Session, task_id: int) -> Task| None:
     return db.get(Task, task_id)
+
+
+def update_task(db: Session, task: TaskCreate) -> Task | None:
+    db.add(task)
+    db.commit()
+    db.refresh(task)
+    return task
